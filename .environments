@@ -1,0 +1,15 @@
+# Default IDE
+export EDITOR=atom
+
+# Executable Search Path
+export PATH=/usr/local/git/bin:$PATH
+# Add RVM to PATH for scripting
+export PATH="$PATH:$HOME/.rvm/bin"
+# Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
+
+# This loads nvm
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+
+# Load RVM into a shell session *as a function*
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
