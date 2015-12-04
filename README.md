@@ -1,9 +1,8 @@
-# @author     Dustin Delatore
-
+# Bash Configs
 
 ### File description
-- README.md      - This file
-- .aliases       - alias definitions
-- .profile       - bash design and colors
-- .environments  - basic environment settings
-- .bashrc        - the main RC file
+- __README.md__ - This file
+- __.aliases__ - alias definitions
+- __.profile__ - bash design and colors
+- __.environments__ - basic environment settings
+- __.bashrc__ - the main RC file
