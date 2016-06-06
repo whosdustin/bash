@@ -18,9 +18,11 @@ if [ ! -f $HOME/.bashrc ]; then
 fi
 ```
 
-Close your terminal and reopen. Done.
+Close your terminal and reopen. 
 
-_notes_: you might find the following show up at the top.
+**Done.**
+
+_Notes_: you might find the following show up at the top.
 ```
 -bash: /Users/<name>/.bash/.private: No such file or directory
 -bash: /Users/<name>/.npm/nvm: No such file or directory
