@@ -7,6 +7,15 @@
 - __.environments__ - basic environment settings
 - __.bashrc__ - the main RC file
 
+## Terminal View
+Design inspired by [Wild Cherry](https://github.com/mashaal/wild-cherry)
+![Terminal](img/terminal.png)
+
+### Branch  Emojis
+> 👍 Clean
+
+> 💩 Dirty
+
 ## Install
 ``` shell
 $ git clone https://github.com/whosdustin/bash.git .bash
@@ -18,7 +27,7 @@ if [ ! -f $HOME/.bashrc ]; then
 fi
 ```
 
-Close your terminal and reopen. 
+Close your terminal and reopen.
 
 **Done.**
 
