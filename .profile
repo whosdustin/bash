@@ -31,19 +31,13 @@ else
 fi
 
 parse_git_dirty () {
-  [[ $(git status 2> /dev/null | tail -n1) != "nothing to commit (working directory clean)" ]] && echo "*"
+  [[ $(git status 2> /dev/null | tail -n1) != "nothing to commit, working directory clean" ]] && echo " 💩 "
+}
+parse_git_clean () {
+  [[ $(git status 2> /dev/null | tail -n1) == "nothing to commit, working directory clean" ]] && echo " 👍 "
 }
 parse_git_branch () {
   git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/\1$(parse_git_dirty)/"
 }
 
-PS1="@\[${BOLD}${MAGENTA}\]\u\[$WHITE\]: \[$GREEN\]\w\[$WHITE\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" [ \")\[$PURPLE\]\$(parse_git_branch)\[$WHITE\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" ] \")\[$WHITE\]\n\$ \[$RESET\]"
-
-#export PS1="\[\e[35;40m\]\h\[\e[0m\] in \[\e[32;40m\]\w\[\e[0m\] on \[\e[35;40m\]\u \[\e[0m\] \n± "
-# parse_git_branch() {
-#  git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\ \1/'
-#}
-
-#export PS1='@\[\e[1;32m\]\h\[\e[1;37m\]: \[\e[1;36m\]\w \[\e[1;37m\][\[\e[1;33m\]$(parse_git_branch)\[\e[1;37m\] ] \n$ \[\e[0m\]'
-
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+PS1="🐨 \[${BOLD}${MAGENTA}\]\u\[$WHITE\]: \[$GREEN\]\w\[$WHITE\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" [ \")\[$PURPLE\]\$(parse_git_branch)\$(parse_git_clean)\[$WHITE\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" ] \")\[$WHITE\]\n👉 \[$RESET\]"

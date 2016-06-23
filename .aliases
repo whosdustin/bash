@@ -13,3 +13,4 @@ alias .5='cd ../../../../..'
 alias apps="cd ~/apps"
 alias documents="cd ~/documents"
 alias sites="cd ~/sites"
+alias git="hub"
