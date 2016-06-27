@@ -7,6 +7,7 @@
 - __.environments__ - basic environment settings
 - __.bashrc__ - the main RC file
 
+
 ## Terminal View
 Design inspired by [Wild Cherry](https://github.com/mashaal/wild-cherry)
 ![Terminal](img/terminal.png)
