@@ -40,4 +40,4 @@ parse_git_branch () {
   git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/\1$(parse_git_dirty)/"
 }
 
-PS1="🐨 \[${BOLD}${MAGENTA}\]\u\[$WHITE\]: \[$GREEN\]\w\[$WHITE\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" [ \")\[$PURPLE\]\$(parse_git_branch)\$(parse_git_clean)\[$WHITE\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" ] \")\[$WHITE\]\n👉  \[$RESET\]"
+PS1="🐨 \[${BOLD}${MAGENTA}\]\u\[$WHITE\]: \[$GREEN\]\w\[$WHITE\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" [ \")\[$PURPLE\]\$(parse_git_branch)\$(parse_git_clean)\[$WHITE\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" ] \")\[$WHITE\]\n👉 \[$RESET\]"
