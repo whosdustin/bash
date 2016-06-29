@@ -40,7 +40,11 @@ parse_git_branch () {
   git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/\1$(parse_git_dirty)/"
 }
 
-PS1="🐨 \[${BOLD}${MAGENTA}\]\u\[$WHITE\]: \[$GREEN\]\w\[$WHITE\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" [ \")\[$PURPLE\]\$(parse_git_branch)\$(parse_git_clean)\[$WHITE\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" ] \")\[$WHITE\]\n👉  \[$RESET\]"
+now () {
+	date "+%a%l:%M%p"
+}
+
+PS1="${ORANGE}\$(now) \[${BOLD}${MAGENTA}\]\u ${BOLD}${PURPLE}=> \[$GREEN\]\w\[$WHITE\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" [ \")\[$PURPLE\]\$(parse_git_branch)\$(parse_git_clean)\[$WHITE\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" ] \")\[$WHITE\]\n👉  \[$RESET\]"
 
 # Document List Colors
 export CLICOLOR=1

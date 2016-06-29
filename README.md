@@ -7,7 +7,7 @@
 - __.environments__ - basic environment settings
 - __.bashrc__ - the main RC file
 
-<<<<<<< HEAD
+
 
 ## Terminal View
 Design inspired by [Wild Cherry](https://github.com/mashaal/wild-cherry)
@@ -18,8 +18,6 @@ Design inspired by [Wild Cherry](https://github.com/mashaal/wild-cherry)
 
 > 💩 Dirty
 
-=======
->>>>>>> parent of fa08fb6... update readme and add assets
 ## Install
 ``` shell
 $ git clone https://github.com/whosdustin/bash.git .bash
@@ -31,7 +29,7 @@ if [ ! -f $HOME/.bashrc ]; then
 fi
 ```
 
-Close your terminal and reopen. 
+Close your terminal and reopen.
 
 **Done.**
 
