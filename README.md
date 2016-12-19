@@ -33,11 +33,4 @@ Close your terminal and reopen.
 
 **Done.**
 
-_Notes_: you might find the following show up at the top.
-```
--bash: /Users/<name>/.bash/.private: No such file or directory
--bash: /Users/<name>/.npm/nvm: No such file or directory
-```
-You will need to install nvm as my profile uses nvm for node. You can [install nvm here](https://github.com/creationix/nvm#install-script).
-
 The `.private` file is for you to add TOKENS such as Github.
