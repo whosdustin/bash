@@ -30,19 +30,10 @@ else
     RESET="\033[m"
 fi
 
-# parse_git_dirty () {
-#   [[ $(git status 2> /dev/null | grep "nothing to commit") != "nothing to commit, working tree clean" ]] && echo " 💩 "
-# }
-# parse_git_clean () {
-#   [[ $(git status 2> /dev/null | grep "nothing to commit") == "nothing to commit, working tree clean" ]] && echo " 👍 "
-# }
-# parse_git_branch () {
-#   git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/\1$(parse_git_dirty)/"
-# }
-
-function parse_git_branch {
-  git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
+function parse_git_branch () {
+  git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/\1 $(check_for_repo) /"
 }
+
 function git-dirty {
   st=$(git status 2>/dev/null | tail -n 1)
   if [[ $st != "nothing to commit, working tree clean" ]]
@@ -54,13 +45,13 @@ function check_for_repo {
   status=$(git status 2>/dev/null | tail -n 1)
   if [[ $status == "" ]]
   then
-      echo ""
+      echo " 👍 "
   else
       echo $(git-dirty)
   fi
 }
 
-PS1="${BOLD}${PURPLE}=> \[$GREEN\]\w\[$WHITE\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" [ \")\[$PURPLE\]\$(parse_git_branch)\$(check_for_repo)\[$WHITE\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" ] \")\[$WHITE\]\n⚡️  \[$RESET\]"
+PS1="${BOLD}${PURPLE}=> \[$GREEN\]\w\[$WHITE\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" [ \")\[$PURPLE\]\$(parse_git_branch)\[$WHITE\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" ] \")\[$WHITE\]\n⚡️  \[$RESET\]"
 
 # Document List Colors
 export CLICOLOR=1
