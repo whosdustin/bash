@@ -43,7 +43,7 @@ function git-dirty {
 }
 function check_for_repo {
   status=$(git status 2>/dev/null | tail -n 1)
-  if [[ $status == "" ]]
+  if [[ $status == "nothing to commit, working tree clean" ]]
   then
       echo " 👍 "
   else
