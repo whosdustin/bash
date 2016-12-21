@@ -38,14 +38,14 @@ function git-dirty {
   st=$(git status 2>/dev/null | tail -n 1)
   if [[ $st != "nothing to commit, working tree clean" ]]
   then
-      echo " 💩 "
+      echo "💩"
   fi
 }
 function check_for_repo {
   status=$(git status 2>/dev/null | tail -n 1)
   if [[ $status == "nothing to commit, working tree clean" ]]
   then
-      echo " 👍 "
+      echo "👍"
   else
       echo $(git-dirty)
   fi
