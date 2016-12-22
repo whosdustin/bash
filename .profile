@@ -51,7 +51,7 @@ function check_for_repo {
   fi
 }
 
-PS1="${BOLD}${PURPLE}=> \[$GREEN\]\w\[$WHITE\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" [ \")\[$PURPLE\]\$(parse_git_branch)\[$WHITE\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" ] \")\[$WHITE\]\n⚡️  \[$RESET\]"
+PS1="${BOLD}${PURPLE}=> \[$GREEN\]\w\[$PURPLE\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" [ \")\[$PURPLE\]\$(parse_git_branch)\[$PURPLE\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" ] \")\[$ORANGE\]\n|> \[$RESET\]"
 
 # Document List Colors
 export CLICOLOR=1
