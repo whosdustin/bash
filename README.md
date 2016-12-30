@@ -13,6 +13,8 @@
 Design inspired by [Wild Cherry](https://github.com/mashaal/wild-cherry)
 ![Terminal](img/terminal.png)
 
+You will need to download the font [Fira Code](https://github.com/tonsky/FiraCode). This will give you the icon looking text.
+
 ### Branch  Emojis
 > 👍 Clean
 
@@ -22,7 +24,7 @@ Design inspired by [Wild Cherry](https://github.com/mashaal/wild-cherry)
 ``` shell
 $ git clone https://github.com/whosdustin/bash.git .bash
 ```
-In the computer root add a `.bash_profile` and place the following code inside.
+In the root add a `.bash_profile` and paste the following code inside.
 ```
 if [ ! -f $HOME/.bashrc ]; then
   source $HOME/.bash/.bashrc
