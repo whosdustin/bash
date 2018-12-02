@@ -11,13 +11,14 @@ alias .5='cd ../../../../..'
 
 #open widely used directories
 alias apps="cd ~/apps"
-alias documents="cd ~/documents"
-alias freelance="cd ~/documents/freelance"
 alias sites="cd ~/sites"
 alias shopify="cd ~/sites/_shopify"
-alias whosdustin.com="cd ~/sites/_jekyll/whosdustin.com"
-# alias git="hub"
 alias sketch="sketchtool"
+alias drive="cd ~/'Google Drive File Stream'/'My Drive/'"
+
+# Active Projects
+alias whosdustin.com="cd ~/sites/_jekyll/whosdustin.com"
+alias vuemastery.com="cd ~/sites/vuemastery.com"
 
 # Servers
 alias "pgup"="pg_ctl -D /usr/local/var/postgres start"

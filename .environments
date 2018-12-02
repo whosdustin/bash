@@ -1,5 +1,5 @@
 # Default IDE
-export EDITOR=atom
+export EDITOR=code
 
 # Executable Search Path
 export PATH=/usr/local/git/bin:$PATH

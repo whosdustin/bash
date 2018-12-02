@@ -46,7 +46,7 @@ set_bash_prompt () {
     GITBKG=$BKRED
     GITTEXT=$ORANGE
   fi
-  PS1="\[$BKBLUE\]\[$BLUE\]◼︎\[$WHITE\]★\[$BLUE\]◼︎\[$RESET\]\[$BLUE\]\[$BKORANGE\]⎬ \[$RED\]\w\[$ORANGE\]◼︎\[$RESET\]\[$GITCOLOR\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" ⎨\")\[$GITBKG\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \"⎪\")\[$GITTEXT\]\$(parse_git_branch)\[$RESET\]\[$GITCOLOR\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \"⎬ \")\[$RESET\]\[$ORANGE\]⎪\n \[$ORANGE\]⚡︎ \[$RESET\]"
+  PS1=" \[$PURPLE\]\w\[$RESET\]\[$GITCOLOR\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" ( \")\$(parse_git_branch)\[$RESET\]\[$GITCOLOR\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \") \")\[$RESET\]\n \[$ORANGE\]⚡ \[$RESET\]"
 }
 
 PROMPT_COMMAND=set_bash_prompt
