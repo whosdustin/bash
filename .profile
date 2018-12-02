@@ -21,7 +21,11 @@ BKBLACK="\e[40m"
 BKRESET="\e[m"
 
 parse_git_branch () {
-  git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/\1 $(check_for_repo) /"
+  has_git_branch | sed -e '/^[^*]/d' -e "s/* \(.*\)/\1 $(check_for_repo) /"
+}
+
+has_git_branch () {
+  git branch 2> /dev/null
 }
 
 check_for_repo () {
@@ -46,7 +50,7 @@ set_bash_prompt () {
     GITBKG=$BKRED
     GITTEXT=$ORANGE
   fi
-  PS1=" \[$PURPLE\]\w\[$RESET\]\[$GITCOLOR\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" ( \")\$(parse_git_branch)\[$RESET\]\[$GITCOLOR\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \") \")\[$RESET\]\n \[$ORANGE\]⚡ \[$RESET\]"
+  PS1=" \[$PURPLE\]\w\[$RESET\]\[$GITCOLOR\]\$([[ -n \$(has_git_branch) ]] && echo \" ( \")\$(parse_git_branch)\[$RESET\]\[$GITCOLOR\]\$([[ -n \$(has_git_branch) ]] && echo \") \")\[$RESET\]\n \[$ORANGE\]⚡ \[$RESET\]"
 }
 
 PROMPT_COMMAND=set_bash_prompt
